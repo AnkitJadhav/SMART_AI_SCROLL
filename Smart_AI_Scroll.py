@@ -36,9 +36,9 @@ while True:
         if area > 300:
             x, y, w, h = cv2.boundingRect(c)
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 1)
-            cv2.drawContours(frame, contours, -1, (0,255,0), 2)
+            cv2.drawContours(frame, contours, -1, (0, 255, 0), 2)
 
-            if x in prey_x:
+            if x < prey_x:
                 pyautogui.press('up')
             prey_x = x
 
